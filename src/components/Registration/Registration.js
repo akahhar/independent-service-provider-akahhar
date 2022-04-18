@@ -1,15 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
 } from "react-firebase-hooks/auth";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Registration = () => {
   const [sendEmailVerification] = useSendEmailVerification(auth);
-  const notify = () => toast("Here is your toast.");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [conPassword, setConPassword] = useState("");
@@ -31,7 +31,8 @@ const Registration = () => {
   const ConPasswordHandler = (event) => {
     setConPassword(event.target.value);
   };
-  const handleFormSubmit = async (event) => {
+  const notify = () => toast.error(error?.message);
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     if (password !== conPassword) {
@@ -43,21 +44,21 @@ const Registration = () => {
       return;
     }
     createUserWithEmailAndPassword(email, password);
-    notify();
-    const duya = await sendEmailVerification(email);
-    console.log(duya);
+
+    sendEmailVerification(email);
   };
 
   useEffect(() => {
-    console.log(user);
-    if (user?.user?.accessToken) {
-      // navigate(from);
+    if (error) {
+      notify();
     }
-  }, [user, from, navigate]);
+    if (user?.user?.accessToken) {
+      navigate(from);
+    }
+  }, [user, from, navigate, error, notify]);
 
   return (
     <div className="form-container">
-      <Toaster />
       <h1>Please Registration now</h1>
       <form onSubmit={handleFormSubmit}>
         <div className="mb-3">
@@ -98,14 +99,17 @@ const Registration = () => {
             placeholder="Confirm password"
           />
         </div>
-        <p>{loading && "Loading..."}</p>
         <h6 style={{ color: "red" }}>{error?.message || customError}</h6>
-        <input type="submit" className="btn" value="Create an account" />
+        <input
+          type="submit"
+          disabled={loading}
+          className="btn"
+          value={loading ? "Loading..." : "Create an account"}
+        />
       </form>
       <p>
         Already Have an account ? <Link to="/login">Login</Link>
       </p>
-      <button className="btn">Sign in with Google</button>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import About from "./components/AboutMe/About";
 import Blog from "./components/Blogs/Blog";
@@ -9,10 +10,12 @@ import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
 import Registration from "./components/Registration/Registration";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
+import SendPasswordReset from "./components/SendPasswordReset/SendPasswordReset ";
 
 function App() {
   return (
     <div className="app">
+      <Toaster />
       <Header />
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -27,6 +30,10 @@ function App() {
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route
+          path="/sendPasswordReset"
+          element={<SendPasswordReset></SendPasswordReset>}
+        ></Route>
         <Route
           path="/registration"
           element={<Registration></Registration>}

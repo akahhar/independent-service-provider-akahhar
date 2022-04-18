@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import {
   useAuthState,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Login.css";
@@ -30,7 +32,7 @@ const Login = () => {
       navigate(from, { replace: true });
     });
   };
-
+  const notify = () => toast.error(error?.message);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const handleFormSubmit = (event) => {
@@ -38,10 +40,13 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
   useEffect(() => {
+    if (error) {
+      notify();
+    }
     if (data?.accessToken) {
       navigate(from);
     }
-  }, [data, from, navigate]);
+  }, [data, error, from, navigate, notify]);
 
   return (
     <div className="form-container">
@@ -75,11 +80,21 @@ const Login = () => {
         </div>
 
         <h6 style={{ color: "red" }}>{error?.message}</h6>
-        <input type="submit" className="btn" value="Login" />
+
+        <input
+          type="submit"
+          disabled={loading}
+          className="btn"
+          value={loading ? "Loading..." : "Login"}
+        />
       </form>
+      <p>
+        <Link to={"/sendPasswordReset"}>Forgotten password?</Link>
+      </p>
       <p>
         If new user ? <Link to="/registration">Registration</Link>
       </p>
+
       <button className="btn" onClick={handleGoogleSignIn}>
         Sign In with Google
       </button>
