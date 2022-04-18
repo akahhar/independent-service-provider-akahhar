@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import {
-  useAuthState,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -12,7 +11,7 @@ import auth from "../../firebase.init";
 import "./Login.css";
 
 const Login = () => {
-  const [data] = useAuthState(auth);
+  // const [data] = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const location = useLocation();
@@ -26,7 +25,13 @@ const Login = () => {
   };
 
   const from = location?.state?.from?.pathname || "/";
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(email, password);
+  };
   const [signInWithGoogle] = useSignInWithGoogle(auth);
   const handleGoogleSignIn = () => {
     signInWithGoogle().then((data) => {
@@ -36,22 +41,14 @@ const Login = () => {
 
   const notify = () => toast.error(error?.message);
 
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    signInWithEmailAndPassword(email, password);
-  };
-
   useEffect(() => {
     if (error) {
       notify();
     }
-    if (data?.accessToken) {
+    if (user?.user?.accessToken) {
       navigate(from);
     }
-  }, [error]);
+  }, [error, user]);
 
   return (
     <div className="form-container">

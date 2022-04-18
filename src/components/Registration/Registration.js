@@ -44,7 +44,6 @@ const Registration = () => {
       return;
     }
     createUserWithEmailAndPassword(email, password);
-
     sendEmailVerification(email);
   };
 
@@ -55,7 +54,7 @@ const Registration = () => {
     if (user?.user?.accessToken) {
       navigate(from);
     }
-  }, [error]);
+  }, [error, user]);
 
   return (
     <div className="form-container">

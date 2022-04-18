@@ -1,0 +1,129 @@
+[debug] [2022-04-18T15:12:11.278Z] ----------------------------------------------------------------------
+[debug] [2022-04-18T15:12:11.279Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\codex\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-04-18T15:12:11.280Z] CLI Version:   10.6.0
+[debug] [2022-04-18T15:12:11.280Z] Platform:      win32
+[debug] [2022-04-18T15:12:11.280Z] Node Version:  v16.13.1
+[debug] [2022-04-18T15:12:11.281Z] Time:          Mon Apr 18 2022 21:12:11 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-04-18T15:12:11.281Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-18T15:12:11.339Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-18T15:12:11.339Z] > authorizing via signed-in user (sm.hasanur121@gmail.com)
+[debug] [2022-04-18T15:12:11.339Z] [iam] checking project wedding-moments-5a218 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-04-18T15:12:11.341Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions [none]
+[debug] [2022-04-18T15:12:11.342Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-18T15:12:12.615Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions 200
+[debug] [2022-04-18T15:12:12.615Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-18T15:12:12.618Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 [none]
+[debug] [2022-04-18T15:12:13.252Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 200
+[debug] [2022-04-18T15:12:13.252Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 {"projectId":"wedding-moments-5a218","projectNumber":"694904026941","displayName":"wedding-moments","name":"projects/wedding-moments-5a218","resources":{"hostingSite":"wedding-moments-5a218"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'wedding-moments-5a218'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-04-18T15:12:13.256Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 [none]
+[debug] [2022-04-18T15:12:13.743Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 200
+[debug] [2022-04-18T15:12:13.744Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 {"projectId":"wedding-moments-5a218","projectNumber":"694904026941","displayName":"wedding-moments","name":"projects/wedding-moments-5a218","resources":{"hostingSite":"wedding-moments-5a218"},"state":"ACTIVE"}
+[debug] [2022-04-18T15:12:13.751Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions [none]
+[debug] [2022-04-18T15:12:13.751Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-04-18T15:12:15.314Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions 500
+[debug] [2022-04-18T15:12:15.314Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-04-18T15:12:15.510Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-04-18T15:12:32.420Z] ----------------------------------------------------------------------
+[debug] [2022-04-18T15:12:32.422Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\codex\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-04-18T15:12:32.423Z] CLI Version:   10.6.0
+[debug] [2022-04-18T15:12:32.423Z] Platform:      win32
+[debug] [2022-04-18T15:12:32.423Z] Node Version:  v16.13.1
+[debug] [2022-04-18T15:12:32.424Z] Time:          Mon Apr 18 2022 21:12:32 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-04-18T15:12:32.424Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-18T15:12:32.483Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-18T15:12:32.483Z] > authorizing via signed-in user (sm.hasanur121@gmail.com)
+[debug] [2022-04-18T15:12:32.484Z] [iam] checking project wedding-moments-5a218 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-04-18T15:12:32.486Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions [none]
+[debug] [2022-04-18T15:12:32.486Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-18T15:12:33.683Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions 200
+[debug] [2022-04-18T15:12:33.683Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-18T15:12:33.685Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 [none]
+[debug] [2022-04-18T15:12:34.347Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 200
+[debug] [2022-04-18T15:12:34.348Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 {"projectId":"wedding-moments-5a218","projectNumber":"694904026941","displayName":"wedding-moments","name":"projects/wedding-moments-5a218","resources":{"hostingSite":"wedding-moments-5a218"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'wedding-moments-5a218'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-04-18T15:12:34.358Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 [none]
+[debug] [2022-04-18T15:12:34.808Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 200
+[debug] [2022-04-18T15:12:34.809Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 {"projectId":"wedding-moments-5a218","projectNumber":"694904026941","displayName":"wedding-moments","name":"projects/wedding-moments-5a218","resources":{"hostingSite":"wedding-moments-5a218"},"state":"ACTIVE"}
+[debug] [2022-04-18T15:12:34.816Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions [none]
+[debug] [2022-04-18T15:12:34.816Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-04-18T15:12:36.331Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions 500
+[debug] [2022-04-18T15:12:36.331Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-04-18T15:12:36.521Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-04-18T15:16:11.040Z] ----------------------------------------------------------------------
+[debug] [2022-04-18T15:16:11.042Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\codex\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-04-18T15:16:11.043Z] CLI Version:   10.6.0
+[debug] [2022-04-18T15:16:11.043Z] Platform:      win32
+[debug] [2022-04-18T15:16:11.043Z] Node Version:  v16.13.1
+[debug] [2022-04-18T15:16:11.054Z] Time:          Mon Apr 18 2022 21:16:11 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-04-18T15:16:11.054Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-18T15:16:11.121Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-18T15:16:11.121Z] > authorizing via signed-in user (sm.hasanur121@gmail.com)
+[debug] [2022-04-18T15:16:11.121Z] [iam] checking project wedding-moments-5a218 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-04-18T15:16:11.124Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions [none]
+[debug] [2022-04-18T15:16:11.124Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-18T15:16:12.379Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions 200
+[debug] [2022-04-18T15:16:12.380Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wedding-moments-5a218:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-18T15:16:12.382Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 [none]
+[debug] [2022-04-18T15:16:12.832Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 200
+[debug] [2022-04-18T15:16:12.833Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 {"projectId":"wedding-moments-5a218","projectNumber":"694904026941","displayName":"wedding-moments","name":"projects/wedding-moments-5a218","resources":{"hostingSite":"wedding-moments-5a218"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'wedding-moments-5a218'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-04-18T15:16:12.843Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 [none]
+[debug] [2022-04-18T15:16:13.275Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 200
+[debug] [2022-04-18T15:16:13.276Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wedding-moments-5a218 {"projectId":"wedding-moments-5a218","projectNumber":"694904026941","displayName":"wedding-moments","name":"projects/wedding-moments-5a218","resources":{"hostingSite":"wedding-moments-5a218"},"state":"ACTIVE"}
+[debug] [2022-04-18T15:16:13.283Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions [none]
+[debug] [2022-04-18T15:16:13.283Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-04-18T15:16:14.798Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions 500
+[debug] [2022-04-18T15:16:14.799Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/694904026941/sites/wedding-moments-5a218/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-04-18T15:16:14.998Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}

@@ -56,21 +56,19 @@ const Blog = () => {
       <h4 className="mt-4">
         3.What other services does `firebase` provide other than authentication?
       </h4>
-      <p>
-        Answer : There are many services which Firebase provides, Most useful of
-        them are:
-        <br />
-        <ul>
-          <li>Cloud Firestore</li>
-          <li>Cloud Functions</li>
-          <li>Authentication</li>
-          <li>Hosting</li>
-          <li>Cloud Storage</li>
-          <li>Google Analytics</li>
-          <li>Predictions</li>
-          <li>Cloud Messaging</li>
-        </ul>
-      </p>
+      Answer : There are many services which Firebase provides, Most useful of
+      them are:
+      <br />
+      <ul>
+        <li>Cloud Firestore</li>
+        <li>Cloud Functions</li>
+        <li>Authentication</li>
+        <li>Hosting</li>
+        <li>Cloud Storage</li>
+        <li>Google Analytics</li>
+        <li>Predictions</li>
+        <li>Cloud Messaging</li>
+      </ul>
     </div>
   );
 };
