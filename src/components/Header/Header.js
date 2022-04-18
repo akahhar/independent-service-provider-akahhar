@@ -1,24 +1,59 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
-
+import "./Header.css";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
+  let navigate = useNavigate();
+  const login = () => {
+    navigate("login");
+  };
+
+  const singOutHandler = () => {
+    localStorage.removeItem("token");
+    signOut(auth);
+  };
+
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/checkout">Checkout</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/about">About</Link>
-      {user?.uid ? (
-        <button onClick={() => signOut(auth)}>Sign Out</button>
-      ) : (
-        <Link to="/login">Login</Link>
-      )}
-      <span>{user?.displayName && user.displayName}</span>
-    </nav>
+    <>
+      <header>
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-3 col-lg-3 col-md-3 d-flex align-items-center">
+              <div className="logo">
+                <Link to="/">
+                  <span>Wedding Moments</span>
+                </Link>
+              </div>
+            </div>
+            <div className="col-xl-7 col-lg-7 col-md-7 d-flex align-items-center justify-content-end">
+              <div className="menu-bar">
+                <nav>
+                  <Link to="/">Home</Link>
+                  <Link to="/checkout">Checkout</Link>
+                  <Link to="/blog">Blog</Link>
+                  <Link to="/about">About</Link>
+                </nav>
+              </div>
+            </div>
+            <div className="col-xl-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-end">
+              {user?.uid ? (
+                <button className="btn" onClick={singOutHandler}>
+                  Sign Out
+                </button>
+              ) : (
+                <button className="btn" onClick={login}>
+                  Login
+                </button>
+              )}
+              <span>{user?.displayName && user.displayName}</span>
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
   );
 };
 

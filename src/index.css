@@ -13,14 +13,16 @@
 */
 
 /* 1. Theme default css */
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap"); */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap');
 
 body {
   margin: 0;
   padding: 0;
   font-weight: normal;
   font-style: normal;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .img {
@@ -96,7 +98,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: normal;
   color: #333333;
   margin-top: 0px;
@@ -128,7 +130,7 @@ h2 {
 }
 
 h3 {
-  font-size: 30;
+  font-size: 22px;
 }
 
 h4 {
@@ -155,10 +157,10 @@ li {
 }
 
 p {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: normal;
-  line-height: 30px;
-  color: #3e3e3e;
+  line-height: 25px;
+  color: rgb(132, 132, 124);
   margin-bottom: 15px;
 }
 
@@ -169,7 +171,7 @@ p {
 /* button style */
 
 .btn {
-  border-radius: 5px;
+  border-radius: 0;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -178,7 +180,7 @@ p {
   letter-spacing: 1px;
   line-height: 1;
   margin-bottom: 0;
-  padding: 8px 14px;
+  padding: 12px 16px;
   text-align: center;
   text-transform: capitalize;
   touch-action: manipulation;
@@ -187,12 +189,12 @@ p {
   white-space: nowrap;
   text-decoration: none;
   border-color: transparent;
-  background-color: #40a944;
+  background-color: #afafa5;
 }
 
 .btn:hover {
   color: #fff;
-  opacity: 0.75;
+  background-color: #9ea096 !important;
 }
 
 /* section title */

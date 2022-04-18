@@ -1,10 +1,45 @@
 import React from "react";
-
+// import required modules
+import { EffectFade, Navigation, Pagination } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import img4 from "../../assets/img-about1.jpg";
+import img2 from "../../assets/portfolio1-page.jpg";
+import img1 from "../../assets/slider-1.jpg";
+import img3 from "../../assets/slider-2.jpg";
+import "./Banner.css";
 const Banner = () => {
   return (
-    <div>
-      <h2>Banner section</h2>
-    </div>
+    <>
+      <Swiper
+        // spaceBetween={30}
+        effect={"fade"}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[EffectFade, Navigation, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src={img1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img3} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img4} alt="" />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 };
 

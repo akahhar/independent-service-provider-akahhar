@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBrLHvQaXLIkkaRODjwlYO0WMLWD_qqm54",
-  authDomain: "wedding-moments.firebaseapp.com",
-  projectId: "wedding-moments",
-  storageBucket: "wedding-moments.appspot.com",
-  messagingSenderId: "1012312482023",
-  appId: "1:1012312482023:web:de2302b970dc7e37510242",
+  apiKey: "AIzaSyAFS5-ulDuKgZ6rOvZ4twI2AvF69Ks9h8g",
+  authDomain: "wedding-moments-5a218.firebaseapp.com",
+  projectId: "wedding-moments-5a218",
+  storageBucket: "wedding-moments-5a218.appspot.com",
+  messagingSenderId: "694904026941",
+  appId: "1:694904026941:web:8c06ecd4811ecaf60d3754",
 };
 
 // Initialize Firebase
