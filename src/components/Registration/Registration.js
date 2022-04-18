@@ -55,7 +55,7 @@ const Registration = () => {
     if (user?.user?.accessToken) {
       navigate(from);
     }
-  }, [user, from, navigate, error, notify]);
+  }, [error]);
 
   return (
     <div className="form-container">
@@ -107,6 +107,7 @@ const Registration = () => {
           value={loading ? "Loading..." : "Create an account"}
         />
       </form>
+
       <p>
         Already Have an account ? <Link to="/login">Login</Link>
       </p>

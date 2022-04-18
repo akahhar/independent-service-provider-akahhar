@@ -33,7 +33,7 @@ const Header = () => {
                 <nav>
                   <Link to="/">Home</Link>
                   <Link to="/checkout">Checkout</Link>
-                  <Link to="/blog">Blog</Link>
+                  <Link to="/blogs">Blog</Link>
                   <Link to="/about">About</Link>
                 </nav>
               </div>
@@ -48,7 +48,7 @@ const Header = () => {
                   Login
                 </button>
               )}
-              <span>{user?.displayName && user.displayName}</span>
+              {/* <span>{user?.displayName && user.displayName}</span> */}
             </div>
           </div>
         </div>

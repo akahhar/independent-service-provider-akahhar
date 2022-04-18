@@ -63,6 +63,20 @@ const Checkout = () => {
             <input type="submit" className="btn" value="Place Order" />
           </form>
         </div>
+        <div className="col-xl-6">
+          <p>
+            Mobile-first is an ecommerce given nowadays. Many of us check out a
+            product on our smartphones before making the purchase later. And if
+            it’s something we need urgently, apps and mobile sites help us buy
+            in just a few clicks. To enhance your mobile site, consider its UI
+            design. Remember that your mobile site is not a ‘direct translation’
+            of your desktop site. Customers may, for instance, benefit from
+            seeing a smaller selection of menus or category pages. They may need
+            larger call to action buttons and opt-in information emails rather
+            than pages of text. Think of how you can condense your site
+            architecture to suit the mobile shopper.
+          </p>
+        </div>
       </div>
     </div>
   );

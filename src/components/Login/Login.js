@@ -7,23 +7,24 @@ import {
 } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import google from "../../assets/google-logo.png";
 import auth from "../../firebase.init";
 import "./Login.css";
 
 const Login = () => {
   const [data] = useAuthState(auth);
-  console.log(data);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [error, setError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const emailHandler = (event) => {
     setEmail(event.target.value);
   };
+
   const passHandler = (event) => {
     setPassword(event.target.value);
   };
+
   const from = location?.state?.from?.pathname || "/";
 
   const [signInWithGoogle] = useSignInWithGoogle(auth);
@@ -32,13 +33,17 @@ const Login = () => {
       navigate(from, { replace: true });
     });
   };
+
   const notify = () => toast.error(error?.message);
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
   };
+
   useEffect(() => {
     if (error) {
       notify();
@@ -46,7 +51,7 @@ const Login = () => {
     if (data?.accessToken) {
       navigate(from);
     }
-  }, [data, error, from, navigate, notify]);
+  }, [error]);
 
   return (
     <div className="form-container">
@@ -94,10 +99,13 @@ const Login = () => {
       <p>
         If new user ? <Link to="/registration">Registration</Link>
       </p>
-
-      <button className="btn" onClick={handleGoogleSignIn}>
-        Sign In with Google
+      <button className="btn signIn" onClick={handleGoogleSignIn}>
+        <img src={google} alt="" /> Sign In with Google
       </button>
+      {/* <span>Or</span> */}
+      {/* <button className="btn signIn" onClick={handleGoogleSignIn}>
+        <img src={facebook} alt="" /> Sign In with Facebook
+      </button> */}
     </div>
   );
 };

@@ -6,21 +6,21 @@ import auth from "../../firebase.init";
 
 const SendPasswordReset = () => {
   const [email, setEmail] = useState("");
+  const notify = () => toast.error(error?.message);
+
   const [sendPasswordResetEmail, sending, error] =
     useSendPasswordResetEmail(auth);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     await sendPasswordResetEmail(email);
   };
-  const notify = () => toast.error(error?.message);
+
   useEffect(() => {
     if (error) {
       notify();
     }
-    // if (user?.user?.accessToken) {
-    //   navigate(from);
-    // }
-  }, [error, notify]);
+  }, [error]);
+
   return (
     <div className="container my-5 row mx-auto">
       <form onSubmit={handleFormSubmit} className="offset-xl-4 col-xl-4">
