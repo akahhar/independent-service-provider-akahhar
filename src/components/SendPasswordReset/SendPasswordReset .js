@@ -13,11 +13,13 @@ const SendPasswordReset = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     await sendPasswordResetEmail(email);
+    toast.success("Sent Email");
   };
-
   useEffect(() => {
     if (error) {
-      notify();
+      setTimeout(() => {
+        notify();
+      }, 3000);
     }
   }, [error]);
 

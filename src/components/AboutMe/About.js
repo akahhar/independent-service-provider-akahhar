@@ -2,8 +2,8 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container">
-      <h2 className="text-center">About Me</h2>
+    <div className="container py-5">
+      <h2 className="text-center mb-5">About Me</h2>
       <div className="row">
         <div className="col-xl-6 col-md-6">
           <div className="about-left">
